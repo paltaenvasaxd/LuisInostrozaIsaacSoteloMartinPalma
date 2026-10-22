@@ -1,0 +1,45 @@
+<header class="hero-section position-relative" id="inicio">
+  <nav class="navbar navbar-expand-lg navbar-dark position-absolute top-0 start-0 w-100 z-3 py-4">
+    <div class="container-fluid px-5">
+      <a href="#inicio" class="navbar-brand">
+        <img src="img/Logo.png" alt="Logo Retiro" class="img-fluid logo-nav" />
+      </a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Mostrar navegación"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fw-bold text-uppercase menu-ampliado gap-lg-4">
+          @for (item of menu; track item.texto) {
+            <li class="nav-item">
+              <a [href]="item.enlace" class="nav-link" [class.active]="item.activo">
+                {{ item.texto }}
+              </a>
+            </li>
+          }
+          <li class="nav-item">
+            <a href="#" class="nav-link" aria-label="Buscar"><i class="bi bi-search fs-5"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="video-container">
+    <div class="video-overlay"></div>
+    <iframe
+      class="hero-video"
+      src="https://www.youtube.com/embed/Y-BCBgfTf0A?autoplay=1&loop=1&mute=1&controls=0&playlist=Y-BCBgfTf0A"
+      title="Video institutional Municipalidad de Retiro"
+      allow="autoplay; encrypted-media"
+      allowfullscreen
+    ></iframe>
+  </div>
+</header>

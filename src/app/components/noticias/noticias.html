@@ -1,0 +1,27 @@
+<section class="noticias-section bg-dark text-white py-5" id="noticias">
+  <div class="container">
+    <h2 class="fw-bold text-center mb-5 border-bottom border-secondary pb-3">
+      NOTICIAS DESTACADAS
+    </h2>
+
+    <div class="row g-4">
+      @for (noticia of noticias; track noticia.imagen) {
+        <div class="col-md-3">
+          <div class="card h-100 bg-secondary text-white border-0 news-card">
+            <img [src]="noticia.imagen" class="card-img-top" [alt]="noticia.alt" />
+            <div class="card-body">
+              <h6 class="card-title fw-bold">{{ noticia.titulo }}</h6>
+              <small class="text-light">{{ noticia.fecha }}</small>
+            </div>
+          </div>
+        </div>
+      }
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="#" class="btn btn-outline-light btn-lg fw-bold">
+        <i class="bi bi-grid-3x3-gap-fill me-2"></i>Ver Mas Noticias
+      </a>
+    </div>
+  </div>
+</section>

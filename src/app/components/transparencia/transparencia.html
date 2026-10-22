@@ -1,0 +1,40 @@
+<section class="container mt-4 mb-5">
+  <div class="row text-center">
+    <div class="col-12">
+      <div class="d-flex justify-content-center gap-4 mb-3">
+        @for (red of redes; track red.enlace) {
+          <a
+            [href]="red.enlace"
+            target="_blank"
+            rel="noopener"
+            class="text-dark fs-3 social-icon"
+            [attr.aria-label]="red.texto"
+          >
+            <i [class]="red.icono"></i>
+          </a>
+        }
+      </div>
+
+      <div
+        class="d-flex justify-content-center flex-wrap gap-3 fw-bold top-links"
+        style="font-size: 0.9rem"
+      >
+        @for (enlace of enlaces; track enlace.texto; let ultimo = $last) {
+          <a
+            [href]="enlace.enlace"
+            target="_blank"
+            rel="noopener"
+            class="text-decoration-none text-dark"
+          >
+            {{ enlace.texto }}
+          </a>
+          @if (!ultimo) {
+            <span class="text-muted d-none d-md-inline">|</span>
+          }
+        }
+      </div>
+
+      <hr class="highlight-line mt-4 mx-auto" />
+    </div>
+  </div>
+</section>
